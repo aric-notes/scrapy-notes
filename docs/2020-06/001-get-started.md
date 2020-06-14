@@ -18,3 +18,6 @@ pip3 install scrapy
 ```shell
 scrapy runspider hello.py
 ```
+
+## resources
+- https://scrapy.org/
