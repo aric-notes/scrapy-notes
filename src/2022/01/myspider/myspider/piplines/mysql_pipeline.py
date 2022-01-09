@@ -10,7 +10,7 @@ from orator import DatabaseManager
 from .. import Post
 
 
-class MysqlPipline:
+class MysqlPipeline:
   def open_spider(self, spider):
     self.db = DatabaseManager(spider.settigns.get('DB_CONFIG'))
 
