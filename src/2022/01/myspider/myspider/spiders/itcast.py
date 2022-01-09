@@ -19,12 +19,11 @@ class ItcastSpider(scrapy.Spider):
       ditem = {}
       ditem["href"] = "https://www.cnpython.com" + item.xpath('.//@href').extract_first()
       ditem["title"] = item.xpath('.//text()').get()
+      print("ditem:", ditem)
       yield scrapy.Request(
-        "https://www.cnpython.com" + ditem["href"],
+        ditem["href"],
         callback=self.parse_detail,
-        meta={
-          "item": ditem
-        }
+        meta={"item": ditem}
       )
     # next_url = 'https://wz.sun0769.com' + response.css('.public-content .paging-box a')[-1].xpath('.//@href').get()
     # print(next_url)
@@ -33,4 +32,5 @@ class ItcastSpider(scrapy.Spider):
   def parse_detail(self, response):
     item = response.meta["item"]
     item["content"] = response.css('.left-details-head .show-content').get()
+    print("detial:", item)
     yield item
