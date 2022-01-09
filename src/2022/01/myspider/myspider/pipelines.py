@@ -17,6 +17,6 @@ class MyspiderPipeline:
 
   def process_item(self, item, spider):
     print(item)
-    line = json.dumps(item) + "\n"
+    line = json.dumps(item, ensure_ascii=False) + "\n"
     self.file.write(line)
     return item
