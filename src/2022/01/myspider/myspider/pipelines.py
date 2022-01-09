@@ -7,7 +7,7 @@
 # useful for handling different item types with a single interface
 import json
 from orator import DatabaseManager
-from models.post import Post
+from ...models.post import Post
 
 
 class MyspiderPipeline:
