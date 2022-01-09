@@ -13,6 +13,16 @@ SPIDER_MODULES = ['myspider.spiders']
 NEWSPIDER_MODULE = 'myspider.spiders'
 LOG_LEVEL = "WARNING"
 FEED_EXPORT_ENCODING = 'utf-8'
+DB_CONFIG = {
+  'mysql': {
+    'driver': 'mysql',
+    'host': 'localhost',
+    'database': 'scrapy_demo',
+    'user': 'root',
+    'password': '123456',
+    'prefix': ''
+  }
+}
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36'
@@ -65,6 +75,7 @@ ROBOTSTXT_OBEY = True
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
   'myspider.pipelines.MyspiderPipeline': 300,
+  'myspider.pipelines.MysqlPipeline': 301,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
