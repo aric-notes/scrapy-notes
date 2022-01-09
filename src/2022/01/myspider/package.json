@@ -1,0 +1,14 @@
+{
+  "name": "myspider",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "scrapy crawl itcast"
+  },
+  "author": "afeiship",
+  "license": "MIT",
+  "homepage": "https://js.work",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aric-notes/scrapy-notes.git"
+  }
+}
