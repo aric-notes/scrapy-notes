@@ -14,12 +14,10 @@ class ItcastSpider(scrapy.Spider):
   def parse(self, response):
     # 处理 start_urls 地址对应的响应
     list = response.css(".stream-list .stream-list__item h2.title a")
-    print(len(list))
     for item in list:
       ditem = {}
       ditem["href"] = "https://www.cnpython.com" + item.xpath('.//@href').extract_first()
       ditem["title"] = item.xpath('.//text()').get()
-      print("ditem:", ditem)
       yield scrapy.Request(
         ditem["href"],
         callback=self.parse_detail,
@@ -32,5 +30,4 @@ class ItcastSpider(scrapy.Spider):
   def parse_detail(self, response):
     item = response.meta["item"]
     item["content"] = response.css('.left-details-head .show-content').get()
-    print("detial:", item)
     yield item

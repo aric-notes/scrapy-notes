@@ -6,8 +6,9 @@
 
 # useful for handling different item types with a single interface
 import json
-from orator import DatabaseManager
-from ...models.post import Post
+
+from .models.post import Post
+
 
 
 class MyspiderPipeline:
@@ -24,17 +25,13 @@ class MyspiderPipeline:
     return item
 
 
-
-
 class MysqlPipeline:
-  def open_spider(self, spider):
-    self.db = DatabaseManager(spider.settigns.get('DB_CONFIG'))
-
-  # def close_spider(self, spider):
-  # self.db.cl
 
   def process_item(self, item, spider):
-    print(item)
-    post = Post(item)
+    print('process item:', item)
+    post = Post()
+    post.title = item["title"]
+    post.href = item["href"]
+    post.content = item["content"]
     post.save()
     return item
