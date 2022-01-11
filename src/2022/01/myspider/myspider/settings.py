@@ -16,7 +16,7 @@ FEED_EXPORT_ENCODING = 'utf-8'
 DB_CONFIG = {
   'mysql': {
     'driver': 'mysql',
-    'host': 'localhost',
+    'host': '127.0.0.1',
     'database': 'scrapy_demo',
     'user': 'root',
     'password': '123456',
