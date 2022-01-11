@@ -7,7 +7,7 @@ from orator import DatabaseManager
 config = {
   'mysql': {
     'driver': 'mysql',
-    'host': 'localhost',
+    'host': '127.0.0.1',
     'database': 'scrapy_demo',
     'user': 'root',
     'password': '123456',

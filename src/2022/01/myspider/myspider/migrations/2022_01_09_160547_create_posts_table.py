@@ -10,7 +10,7 @@ class CreatePostsTable(Migration):
         with self.schema.create('posts') as table:
             table.increments('id')
             table.string('title')
-            table.string('href')
+            table.string('href').unique()
             table.text('content')
             table.timestamps()
 
