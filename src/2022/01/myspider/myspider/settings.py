@@ -74,8 +74,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-  'myspider.pipelines.MyspiderPipeline': 300,
-  'myspider.pipelines.MysqlPipeline': 301,
+  'myspider.pipelines.mysql_pipeline.MysqlPipeline': 100,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
