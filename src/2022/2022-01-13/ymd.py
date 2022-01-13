@@ -1,9 +1,12 @@
+from jsw_nx import nx
+
 years = range(2022, 2026)
 months = range(1, 13)
 
 
 # get days in month
 def get_days(year, month):
+  nx.get({}, 'xxx.test')
   tail = 32
   if month == 2 and year % 4 == 0: tail = 30
   if month == 2 and year % 4 != 0: tail = 29
