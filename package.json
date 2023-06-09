@@ -1,14 +1,12 @@
 {
-  "name": "@feizheng/scrapy-notes",
+  "name": "scrapy-notes",
   "version": "1.0.0",
-  "description": "Scrapy learning notes.",
-  "homepage": "https://github.com/afeiship",
+  "description": "Scrapy notes.",
+  "homepage": "https://js.work",
   "author": {
-    "name": "afeiship",
+    "name": "aric",
     "email": "1290657123@qq.com"
   },
   "license": "MIT",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  }
+  "generator": "@jswork/generator-github"
 }
