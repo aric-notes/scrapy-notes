@@ -1,4 +1,5 @@
 import scrapy
+from awesome_scrapy.models.site import Site
 
 
 class BaiduSpider(scrapy.Spider):
@@ -8,5 +9,5 @@ class BaiduSpider(scrapy.Spider):
 
     def parse(self, response):
         title = response.css('title::text').extract_first()
-
-        self.logger.info("title: %s" % title)
+        entity = Site(title=title, url=response.url)
+        entity.save()
